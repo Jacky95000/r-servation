@@ -10,22 +10,23 @@ class Reservation {
     public $status;
     public $bookedAt;
     public $cleaningOption;
-}
-// création de l'objet
-$reservation = new Reservation ();
+
+public function __construct() {
 // valeurs pour créer l'objet
-$reservation->name = "Jacky Bonnot";
-$reservation->place = "Paris";
-$reservation->startDate = new DateTime("25-04-15");
-$reservation->endDate = new DateTime("25-05-17");
-$reservation->cleaningOption = true;
-$reservation->nightPrice = 1000;
+$this->name = "Jacky Bonnot";
+$this->place = "Paris";
+$this->startDate = new DateTime("25-04-15");
+$this->endDate = new DateTime("25-05-17");
+$this->cleaningOption = true;
+$this->nightPrice = 1000;
 
 // Calcul qui va permettre de connaitre le prix par nuit
-$totalPrice = (($reservation->endDate->getTimestamp() - $reservation->startDate->getTimestamp()) / (3600 * 24) * $reservation->nightPrice) + 5000;
+$totalPrice = (($this->endDate->getTimestamp() - $this->startDate->getTimestamp()) / (3600 * 24) * $this->nightPrice) + 5000;
 
-$reservation->totalPrice = $totalPrice;
-$reservation->bookedAt = new DateTime();
-$reservation->status = "CART";
+$this->totalPrice = $totalPrice;
+$this->bookedAt = new DateTime();
+$this->status = "CART";
+}
+}
 
-var_dump($reservation);
+$reservation = new Reservation ();
