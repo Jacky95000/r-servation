@@ -11,22 +11,40 @@ class Reservation {
     public $bookedAt;
     public $cleaningOption;
 
-public function __construct() {
-// valeurs pour créer l'objet
-$this->name = "Jacky Bonnot";
-$this->place = "Paris";
-$this->startDate = new DateTime("25-04-15");
-$this->endDate = new DateTime("25-05-17");
-$this->cleaningOption = true;
+
+// parametres pour ma fonction "construct"
+    public function __construct($name, $place, $startDate, $endDate, $cleaningOption) {
+
+$this->name = $name;
+$this->place = $place;
+$this->startDate = $startDate;
+$this->endDate = $endDate;
+$this->cleaningOption = $cleaningOption;
+
 $this->nightPrice = 1000;
 
-// Calcul qui va permettre de connaitre le prix par nuit
+// calculs automatique de la valeur
 $totalPrice = (($this->endDate->getTimestamp() - $this->startDate->getTimestamp()) / (3600 * 24) * $this->nightPrice) + 5000;
 
 $this->totalPrice = $totalPrice;
 $this->bookedAt = new DateTime();
 $this->status = "CART";
 }
+
+// fonction créer pour annuler une commande passe de CART à CANCEL
+public function cancel() {
+    if ($this->status === "CART") {
+        $this-> status = "CANCELED";
+    }
+}
 }
 
-$reservation = new Reservation ();
+$name = "Jacky Bonnot";
+$place = "Bordeaux";
+$start = new DateTime('2025-04-14');
+$end = new DateTime('2025-05-14');
+$cleaning = "true";
+
+$reservation = new Reservation ($name, $place, $start, $end, $cleaning);
+
+$reservation->cancel();
