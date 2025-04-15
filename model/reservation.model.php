@@ -10,9 +10,10 @@ class Reservation {
     public $status;
     public $bookedAt;
     public $cleaningOption;
-    public $cancel; 
-    public $paid;
+    public $canceledAt; 
+    public $paidAt;
     public $comment;
+    public $commentedAt;
 
 
 // parametres pour ma fonction "construct"
@@ -38,19 +39,19 @@ $this->status = "CART";
 public function cancel() {    //fonction pour annuler une commande
     if ($this->status === "CART") {     // status CART
         $this-> status = "CANCELED";    // status annuler
-        $this->cancel = new DateTime();    //date d'annulation
+        $this->canceledAt = new DateTime();    //date d'annulation
     }
 }
-public function PAID() {     // 
+public function pay() {     // 
     if ($this->status === "CART") {
         $this->status = "PAID";
-        $this->paid = new DateTime();
+        $this->paidAt = new DateTime();
     }
 }
-    public function leaveComment($comment) {
+    public function leaveComment($userComment) {
       if  ($this->status === "PAID") {      // status payer
-            $this->comment = $comment;      // commentaire
-            $this->comment = new DateTime();  // date de commentaire
+            $this->comment = $userComment;      // commentaire
+            $this->commentedAt = new DateTime();  // date de commentaire
         }
     }
 }
@@ -64,3 +65,5 @@ $cleaning = "true";
 $reservation = new Reservation ($name, $place, $start, $end, $cleaning);
 
 $reservation->cancel();
+$reservation->pay();
+$reservation->leaveComment("Commentaire du séjour.");
