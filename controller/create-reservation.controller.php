@@ -2,7 +2,7 @@
 
 require_once("../config.php");
 require_once("../model/reservation.model.php");
-require_once("../view/create-reservation.view.php");
+
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {      //vérif si form envoyé
  
@@ -17,11 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {      //vérif si form envoyé
         $cleaningOption = false;  // sinon false
     }
 
-    $reservation = new Reservation($name, $lieux, $startDate, $endDate, $cleaningOption);  // création de la classe Reservation envoie des données
-    $message = "Réservation créée avec succès, au prix de". $reservation->totalPrice;
+    $reservation = new Reservation($name, $place, $startDate, $endDate, $cleaningOption);  // création de la classe Reservation envoie des données
+   
 }
 
-
+require_once("../view/create-reservation.view.php");
 
 
 
