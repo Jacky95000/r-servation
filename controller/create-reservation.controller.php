@@ -23,13 +23,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {      //vérif si form envoyé
 }
 
 require_once("../view/create-reservation.view.php");
-
-
-
-
-
-
-
-
-
-require_once("../view/create-reservation.view.php");
