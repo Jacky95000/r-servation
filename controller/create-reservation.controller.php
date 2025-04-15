@@ -3,6 +3,7 @@
 require_once("../config.php");
 require_once("../model/reservation.model.php");
 
+$reservation = null;  // initialisation de la variable reservation à null
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {      //vérif si form envoyé
  
