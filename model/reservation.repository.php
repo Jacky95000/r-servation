@@ -7,7 +7,12 @@ function persistReservation ($reservation) {
 
 function findReservationForUser () {
     session_start();
-    return $_SESSION["reservation"]; // la réservation est récupérée de la session
+
+    if (array_key_exists('reservation', $_SESSION)) {
+        return $_SESSION["reservation"]; // la réservation est récupérée de la session
+    } else {
+        return null; // réservation n'existe pas dans la session
+    }
 }
 
 ?>
