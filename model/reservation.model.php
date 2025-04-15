@@ -19,6 +19,10 @@ class Reservation {
 // parametres pour ma fonction "construct"
     public function __construct($name, $place, $startDate, $endDate, $cleaningOption) {
 
+if (strlen($name) < 2 ) {
+    throw new Exception("Le nom doit au minimum comporter 2 caractères");
+}
+
 $this->name = $name;
 $this->place = $place;
 $this->startDate = $startDate;
@@ -55,15 +59,3 @@ public function pay() {     //
         }
     }
 }
-
-$name = "Jacky Bonnot";
-$place = "Bordeaux";
-$start = new DateTime('2025-04-14');
-$end = new DateTime('2025-05-14');
-$cleaning = "true";
-
-$reservation = new Reservation ($name, $place, $start, $end, $cleaning);
-
-$reservation->cancel();
-$reservation->pay();
-$reservation->leaveComment("Commentaire du séjour.");
