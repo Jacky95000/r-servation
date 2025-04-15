@@ -47,7 +47,12 @@
 
 
 
-<?php if (!is_null($reservation)) { ?>
+<?php if (!is_null($error)) { ?>
+    <p>Votre réservation a bien été effectuée : <?php echo $error; ?></p>
+    <?php } ?>
+
+<?php if (!is_null($reservationForUser)) { ?>
+
 
     <div>
         <h3>Récapitulatif de votre réservation</h3>
