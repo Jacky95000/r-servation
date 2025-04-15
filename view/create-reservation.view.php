@@ -18,7 +18,7 @@
 
             
             <label>Lieu
-                <select name="lieux">
+                <select name="place">
                     <option value="bordeaux">Bordeaux</option>
                     <option value="martinique">Martinique</option>
                     <option value="île maurice">Île Maurice</option>

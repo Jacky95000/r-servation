@@ -7,7 +7,7 @@ require_once("../view/create-reservation.view.php");
 if ($_SERVER["REQUEST_METHOD"] === "POST") {      //vérif si form envoyé
  
     $name = $_POST['name'];    // récupération des données envoyées par l'utilisateur
-    $lieux = $_POST['lieux'];   // " "
+    $place = $_POST['place'];   // " "
     $startDate = new DateTime($_POST['start-date']);   
     $endDate = new DateTime($_POST['end-date']);
 
