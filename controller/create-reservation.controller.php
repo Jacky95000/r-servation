@@ -6,6 +6,7 @@ require_once("../model/reservation.repository.php");
 
 
 $error = null; 
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {      //vérif si form envoyé
  
     $name = $_POST['name'];    // récupération des données envoyées par l'utilisateur
@@ -21,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {      //vérif si form envoyé
 // Si il y a une erreur dans le formulaire, ça sera affiché
     try {
         $reservation = new Reservation($name, $place, $startDate, $endDate, $cleaningOption);
+        persistReservation($reservation);
         
     } catch(Exception $e) {
         $error = $e->getMessage();
