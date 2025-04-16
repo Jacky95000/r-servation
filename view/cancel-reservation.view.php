@@ -28,6 +28,10 @@
     </p>
 </div>
 <?php } ?>
+        <form method="POST">
+            <button type="submit">Annuler la réservation</button>
+            </form>
+
 
 </body>
 </html>
