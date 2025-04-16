@@ -30,7 +30,7 @@
    
     <div>
         <h3>Votre commentaire :</h3>
-        <p><?php echo $reservationForUser->comment; ?></p> // affichage un commentaire
+        <p><?php echo $reservationForUser->comment; ?></p>
     </div>
 <?php } ?>
 
