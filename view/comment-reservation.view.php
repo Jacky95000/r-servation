@@ -6,14 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-<h2>Laissez un commentaire sur une réservation</h2>
+<h2>Commentaire sur la réservation</h2>
 
 <?php require_once('../view/partials/_resume-reservation.view.php'); ?>
 
 <form method="POST">
 
     <div>
-        <button type="submit">Laissez un commentaire sur la réservation</button>
+        <button type="submit">Commentaire sur la réservation</button>
     </div>
 
     <div>
@@ -30,13 +30,13 @@
    
     <div>
         <h3>Votre commentaire :</h3>
-        <p><?php echo $reservationForUser->comment; ?></p>
+        <p><?php echo $reservationForUser->comment; ?></p> // affichage un commentaire
     </div>
 <?php } ?>
 
-<?php if (isset($errorMessage)) { ?>
+<?php if (isset($errorMessage)) { ?> // affichage d'un message d'erreur si la réservation n'existe pas
     <div>
-        <h3><?php echo $errorMessage; ?></h3>
+        <h3><?php echo $errorMessage; ?></h3> // 
     </div>
 <?php } ?>
 
