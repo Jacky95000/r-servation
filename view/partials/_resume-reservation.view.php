@@ -17,5 +17,8 @@
         ?>
     </p>
     <p>Statut : <?php echo $reservationForUser->status; ?></p>
+    <?php if (!is_null($reservationForUser->comment)) { ?>
+			<p>Commentaire : <?php echo $reservationForUser->comment; ?></p>
+		<?php } ?>
 </div>
 <?php }  ?>

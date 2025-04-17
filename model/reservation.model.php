@@ -54,7 +54,8 @@ public function pay() {     //
 }
     public function leaveComment($userComment) {
       if  ($this->status === "PAID") {      // status payer
-            $this->comment = $userComment;      // commentaire
+            $this->comment = $userComment;   
+            $this->status = "COMMENTED";   // commentaire
             $this->commentedAt = new DateTime();  // date de commentaire
         }
     }
