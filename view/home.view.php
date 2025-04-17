@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+<?php require_once('partials/header.view.php'); ?>
     <h1>Réservation</h1>
 </body>
 </html>

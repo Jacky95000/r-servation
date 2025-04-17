@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
+    <?php require_once('partials/header.view.php'); ?>
+
 <h2>Commentaire sur la réservation</h2>
 
 <?php require_once('../view/partials/_resume-reservation.view.php'); ?>

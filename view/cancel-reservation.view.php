@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
+    <?php require_once('partials/header.view.php'); ?>
+    
     <h1>Annulation réservation</h1>
 
 <?php require_once('../view/partials/_resume-reservation.view.php'); ?>

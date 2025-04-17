@@ -10,6 +10,7 @@
 
     </header>
     <main>
+    <?php require_once('partials/header.view.php'); ?>
         <h1>Créer une réservation</h1>
         <form method="post">
             <label>Nom 
